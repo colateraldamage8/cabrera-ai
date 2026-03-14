@@ -16,7 +16,7 @@ export const tools = [
       'No personal data stored — fully private',
     ],
     tags: ['benefits', 'government', 'guidance'],
-    url: '#',
+    externalLink: null,
   },
   {
     id: 2,
@@ -35,7 +35,7 @@ export const tools = [
       'Tips on when to book for the lowest fares',
     ],
     tags: ['flights', 'travel', 'deals'],
-    url: '#',
+    externalLink: null,
   },
   {
     id: 3,
@@ -54,7 +54,7 @@ export const tools = [
       'Revision mode with quizzes and flashcard-style prompts',
     ],
     tags: ['homework', 'education', 'revision'],
-    url: '#',
+    externalLink: null,
   },
   {
     id: 4,
@@ -73,7 +73,7 @@ export const tools = [
       'Progressive overload guidance week by week',
     ],
     tags: ['fitness', 'training', 'workout'],
-    url: '#',
+    externalLink: null,
   },
   {
     id: 5,
@@ -92,7 +92,7 @@ export const tools = [
       'Supports WhatsApp Business API',
     ],
     tags: ['whatsapp', 'bots', 'automation'],
-    url: '#',
+    externalLink: null,
   },
   {
     id: 6,
@@ -111,7 +111,7 @@ export const tools = [
       'Idea validation and market research assistant',
     ],
     tags: ['business', 'workflows', 'ideas'],
-    url: '#',
+    externalLink: null,
   },
   {
     id: 7,
@@ -130,7 +130,7 @@ export const tools = [
       'Price alert notifications',
     ],
     tags: ['crypto', 'dashboard', 'insights'],
-    url: '#',
+    externalLink: null,
   },
   {
     id: 8,
@@ -149,7 +149,7 @@ export const tools = [
       'Always signposts to a GP or 111 when needed',
     ],
     tags: ['health', 'medical', 'guidance'],
-    url: '#',
+    externalLink: null,
   },
 ];
 

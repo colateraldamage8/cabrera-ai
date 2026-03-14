@@ -34,7 +34,7 @@ export default function ToolDetail() {
 
   const status = statusConfig[tool.status] || statusConfig['Live'];
   const isComingSoon = tool.status === 'Coming Soon';
-  const hasExternalLink = tool.url && tool.url !== '#';
+  const hasExternalLink = !!tool.externalLink;
   const saved = isToolSaved(tool.id);
 
   // Related tools — same category, excluding current
@@ -113,7 +113,7 @@ export default function ToolDetail() {
               </>
             ) : hasExternalLink ? (
               <a
-                href={tool.url}
+                href={tool.externalLink}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="btn-primary px-6 py-3 text-sm gap-2 inline-flex"
@@ -127,7 +127,7 @@ export default function ToolDetail() {
                 style={{ background: 'rgba(255,255,255,0.03)', border: '1px solid rgba(255,255,255,0.06)' }}
               >
                 <Clock className="w-4 h-4" />
-                Link coming soon
+                Direct link coming soon
               </div>
             )}
 

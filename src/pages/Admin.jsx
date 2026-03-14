@@ -58,7 +58,7 @@ function EmptyState({ message }) {
 
 const blankTool = {
   name: '', slug: '', category: 'Productivity', status: 'Live', badge: '',
-  icon: '', description: '', longDescription: '', featuresText: '', tagsText: '', url: '',
+  icon: '', description: '', longDescription: '', featuresText: '', tagsText: '', externalLink: '',
 };
 
 const blankProduct = {
@@ -98,7 +98,7 @@ function ToolsTab() {
       longDescription: form.longDescription,
       features,
       tags,
-      url: form.url || '#',
+      externalLink: form.externalLink || null,
     });
     setForm(blankTool);
     setShowForm(false);
@@ -165,8 +165,8 @@ function ToolsTab() {
               </select>
             </Field>
             <Field>
-              <Label>External URL</Label>
-              <input value={form.url} onChange={set('url')} placeholder="https://..." className="input-field" />
+              <Label>External Link (optional)</Label>
+              <input value={form.externalLink} onChange={set('externalLink')} placeholder="https://... (leave blank to use detail page)" className="input-field" />
             </Field>
           </div>
           <Field>
@@ -214,7 +214,7 @@ function ToolsTab() {
                   <td className="px-4 py-3 text-white/40">{t.category}</td>
                   <td className="px-4 py-3"><Pill label={t.status} /></td>
                   <td className="px-4 py-3"><Pill label={t.badge} /></td>
-                  <td className="px-4 py-3 text-white/25 truncate max-w-[100px]">{t.url === '#' ? '—' : t.url}</td>
+                  <td className="px-4 py-3 text-white/25 truncate max-w-[100px]">{t.externalLink ? '🔗 linked' : '—'}</td>
                   <td className="px-4 py-3">
                     {confirm === t.id ? (
                       <div className="flex items-center gap-2">

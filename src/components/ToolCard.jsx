@@ -1,4 +1,4 @@
-import { ExternalLink, Lock, Clock, Bookmark, BookmarkCheck } from 'lucide-react';
+import { ExternalLink, Lock, Clock, Bookmark, BookmarkCheck, ArrowRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { useStore } from '../context/StoreContext';
 
@@ -99,13 +99,24 @@ export default function ToolCard({ tool }) {
           <Clock className="w-3.5 h-3.5" />
           Coming Soon — Learn More
         </Link>
+      ) : tool.externalLink ? (
+        <a
+          href={tool.externalLink}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="btn-primary w-full py-2.5 text-[13px]"
+        >
+          {tool.badge === 'Premium'
+            ? <><Lock className="w-3.5 h-3.5" /> Open Tool</>
+            : <><ExternalLink className="w-3.5 h-3.5" /> Open Tool</>
+          }
+        </a>
       ) : (
         <Link to={`/tools/${tool.slug}`} className="btn-primary w-full py-2.5 text-[13px]">
-          {tool.badge === 'Premium' ? (
-            <><Lock className="w-3.5 h-3.5" /> View Details</>
-          ) : (
-            <><ExternalLink className="w-3.5 h-3.5" /> Open Tool</>
-          )}
+          {tool.badge === 'Premium'
+            ? <><Lock className="w-3.5 h-3.5" /> View Details</>
+            : <><ArrowRight className="w-3.5 h-3.5" /> View Details</>
+          }
         </Link>
       )}
     </div>

@@ -151,6 +151,25 @@ export const tools = [
     tags: ['health', 'medical', 'guidance'],
     externalLink: null,
   },
+  {
+    id: 9,
+    slug: 'asistente-med',
+    name: 'AsistenteMed',
+    category: 'Health',
+    status: 'Live',
+    badge: 'New',
+    icon: '🩺',
+    description: 'Asistente médico con IA para consultas de salud en español.',
+    longDescription: 'AsistenteMed es tu asistente de salud personal impulsado por IA. Resuelve dudas médicas, consulta síntomas y obtén orientación clara en español — de forma rápida, privada y responsable.',
+    features: [
+      'Consultas de salud en español',
+      'Información sobre síntomas y medicamentos',
+      'Orientación sobre cuándo acudir al médico',
+      'Privado y sin almacenamiento de datos personales',
+    ],
+    tags: ['salud', 'médico', 'español', 'health'],
+    externalLink: 'https://asistentemed.cabreraai.com/',
+  },
 ];
 
 export const categories = [

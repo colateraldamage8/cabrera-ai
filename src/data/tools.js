@@ -6,6 +6,7 @@ export const tools = [
     category: 'Productivity',
     status: 'Live',
     badge: null,
+    featured: false,
     icon: '🏛️',
     description: 'Get quick guidance on benefits, support, and related information.',
     longDescription: 'The UK Benefits Chatbot helps you navigate the complex world of government benefits and financial support. Ask questions in plain English and get clear, straightforward answers — no jargon, no confusion.',
@@ -17,6 +18,7 @@ export const tools = [
     ],
     tags: ['benefits', 'government', 'guidance'],
     externalLink: null,
+    comingSoonMessage: null,
   },
   {
     id: 2,
@@ -25,6 +27,7 @@ export const tools = [
     category: 'Travel',
     status: 'Beta',
     badge: 'Popular',
+    featured: true,
     icon: '✈️',
     description: 'Search and compare affordable flights faster.',
     longDescription: 'Stop wasting hours across comparison sites. Cheap Flights Finder uses AI to surface the best flight deals based on your dates, flexibility, and budget — in seconds.',
@@ -36,6 +39,7 @@ export const tools = [
     ],
     tags: ['flights', 'travel', 'deals'],
     externalLink: null,
+    comingSoonMessage: null,
   },
   {
     id: 3,
@@ -44,6 +48,7 @@ export const tools = [
     category: 'Education',
     status: 'Live',
     badge: null,
+    featured: false,
     icon: '📚',
     description: 'AI help for schoolwork, revision, and learning support.',
     longDescription: 'Homework Assistant is designed to help students of all ages understand topics, check their work, and build confidence — without just giving away the answer. It explains, guides, and encourages.',
@@ -55,6 +60,7 @@ export const tools = [
     ],
     tags: ['homework', 'education', 'revision'],
     externalLink: null,
+    comingSoonMessage: null,
   },
   {
     id: 4,
@@ -63,6 +69,7 @@ export const tools = [
     category: 'Fitness',
     status: 'Beta',
     badge: null,
+    featured: false,
     icon: '💪',
     description: 'Personalized training guidance for gym and home workouts.',
     longDescription: 'Gym AI Trainer acts as your personal coach — creating workout plans, tracking progress, and adjusting your programme based on your goals, equipment, and fitness level.',
@@ -74,6 +81,7 @@ export const tools = [
     ],
     tags: ['fitness', 'training', 'workout'],
     externalLink: null,
+    comingSoonMessage: null,
   },
   {
     id: 5,
@@ -82,6 +90,7 @@ export const tools = [
     category: 'Automation',
     status: 'Coming Soon',
     badge: null,
+    featured: false,
     icon: '💬',
     description: 'Create simple automated bots for WhatsApp use cases.',
     longDescription: 'Build your own WhatsApp bots without writing a single line of code. Set up automated replies, FAQs, lead capture, and notification flows in minutes.',
@@ -93,6 +102,7 @@ export const tools = [
     ],
     tags: ['whatsapp', 'bots', 'automation'],
     externalLink: null,
+    comingSoonMessage: 'Coming soon — this tool is being prepared. Request early access and we\'ll notify you when it launches.',
   },
   {
     id: 6,
@@ -101,6 +111,7 @@ export const tools = [
     category: 'Business',
     status: 'Live',
     badge: null,
+    featured: true,
     icon: '💼',
     description: 'Tools for ideas, workflows, and business support.',
     longDescription: 'Business Helper is your AI co-founder for the day. Draft business plans, generate ideas, write SOPs, create email templates, and get strategic advice — all in one place.',
@@ -112,6 +123,7 @@ export const tools = [
     ],
     tags: ['business', 'workflows', 'ideas'],
     externalLink: null,
+    comingSoonMessage: null,
   },
   {
     id: 7,
@@ -120,6 +132,7 @@ export const tools = [
     category: 'Crypto',
     status: 'Beta',
     badge: null,
+    featured: false,
     icon: '₿',
     description: 'Useful dashboards, insights, and crypto-related utilities.',
     longDescription: 'A growing suite of crypto utilities — track your portfolio, analyse market sentiment, get plain-English explanations of on-chain data, and set price alerts.',
@@ -131,6 +144,7 @@ export const tools = [
     ],
     tags: ['crypto', 'dashboard', 'insights'],
     externalLink: null,
+    comingSoonMessage: null,
   },
   {
     id: 8,
@@ -139,6 +153,7 @@ export const tools = [
     category: 'Health',
     status: 'Live',
     badge: null,
+    featured: false,
     icon: '🏥',
     description: 'Basic health guidance and assistant-style support.',
     longDescription: 'Medical Assistant gives you quick, clear health information to help you make informed decisions. It covers symptoms, medications, lifestyle advice, and when to seek professional help — always responsibly.',
@@ -150,6 +165,7 @@ export const tools = [
     ],
     tags: ['health', 'medical', 'guidance'],
     externalLink: null,
+    comingSoonMessage: null,
   },
   {
     id: 9,
@@ -158,6 +174,7 @@ export const tools = [
     category: 'Health',
     status: 'Live',
     badge: 'New',
+    featured: true,
     icon: '🩺',
     description: 'Asistente médico con IA para consultas de salud en español.',
     longDescription: 'AsistenteMed es tu asistente de salud personal impulsado por IA. Resuelve dudas médicas, consulta síntomas y obtén orientación clara en español — de forma rápida, privada y responsable.',
@@ -169,6 +186,7 @@ export const tools = [
     ],
     tags: ['salud', 'médico', 'español', 'health'],
     externalLink: 'https://asistentemed.cabreraai.com/',
+    comingSoonMessage: null,
   },
 ];
 

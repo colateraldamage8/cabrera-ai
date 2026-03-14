@@ -1,5 +1,5 @@
 import { useParams, Link } from 'react-router-dom';
-import { ArrowLeft, ExternalLink, Clock, CheckCircle, Tag, ArrowRight, Bookmark, BookmarkCheck } from 'lucide-react';
+import { ArrowLeft, ExternalLink, Clock, CheckCircle, Tag, ArrowRight, Bookmark, BookmarkCheck, Zap } from 'lucide-react';
 import { useStore } from '../context/StoreContext';
 
 const statusConfig = {
@@ -145,6 +145,14 @@ export default function ToolDetail() {
                 : <><Bookmark className="w-4 h-4" /> Save to Library</>
               }
             </button>
+
+            {/* Request Similar Tool */}
+            <Link
+              to={`/request?name=${encodeURIComponent('Similar to ' + tool.name)}&category=${encodeURIComponent(tool.category)}`}
+              className="flex items-center gap-2 px-5 py-3 rounded-xl text-sm font-medium border text-white/45 border-white/10 hover:text-blue-400 hover:border-blue-500/25 hover:bg-blue-500/[0.06] transition-all duration-200"
+            >
+              <Zap className="w-4 h-4" /> Request Similar Tool
+            </Link>
           </div>
         </div>
 
@@ -208,7 +216,7 @@ export default function ToolDetail() {
             </div>
             <h2 className="text-white font-bold text-lg mb-2">This tool is in development</h2>
             <p className="text-white/35 text-[13.5px] leading-relaxed mb-6 max-w-sm mx-auto">
-              We're actively building {tool.name}. Want to be notified when it launches, or need something similar now?
+              {tool.comingSoonMessage || `Coming soon — this tool is being prepared. Request early access and we'll notify you when it launches.`}
             </p>
             <div className="flex flex-col sm:flex-row gap-3 justify-center">
               <Link to="/request" className="btn-primary px-6 py-3 text-sm gap-2">

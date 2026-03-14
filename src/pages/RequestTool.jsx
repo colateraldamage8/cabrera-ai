@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { useSearchParams } from 'react-router-dom';
 import { Send, CheckCircle } from 'lucide-react';
 import Logo from '../components/Logo';
 import { useStore } from '../context/StoreContext';
@@ -16,9 +17,17 @@ const toolTypes = [
 
 export default function RequestTool() {
   const { addRequest } = useStore();
+  const [searchParams] = useSearchParams();
   const [submitted, setSubmitted] = useState(false);
   const [form, setForm] = useState({
-    name: '', email: '', toolName: '', toolType: '', budget: '', description: ''
+    name: '',
+    email: '',
+    toolName: searchParams.get('name') || '',
+    toolType: '',
+    budget: '',
+    description: searchParams.get('category')
+      ? `I'm looking for a tool similar to something in the ${searchParams.get('category')} category. `
+      : '',
   });
 
   const handleSubmit = (e) => {

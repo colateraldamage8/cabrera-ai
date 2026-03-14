@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { ArrowRight, ChevronRight, Layers, ShoppingBag, Wrench, BookMarked, CheckCircle } from 'lucide-react';
+import { ArrowRight, ChevronRight, Layers, ShoppingBag, Wrench, BookMarked, CheckCircle, BookmarkCheck, Search, Zap } from 'lucide-react';
 import { useStore } from '../context/StoreContext';
 import ToolCard from '../components/ToolCard';
 import Logo from '../components/Logo';
@@ -170,6 +170,101 @@ export default function Home() {
           <div className="sm:hidden mt-6 text-center">
             <Link to="/tools" className="text-sm text-blue-400 font-medium">View all tools →</Link>
           </div>
+        </div>
+      </section>
+
+      {/* ── BUILD YOUR STACK ──────────────────── */}
+      <section className="py-28 px-4 relative overflow-hidden">
+        {/* Background glows */}
+        <div className="glow-blob w-[600px] h-[400px] top-0 left-1/2 -translate-x-1/2 -translate-y-1/4"
+          style={{ background: 'radial-gradient(ellipse, rgba(37,99,235,0.10) 0%, transparent 65%)' }} />
+        <div className="glow-blob w-64 h-64 bottom-0 left-8"
+          style={{ background: 'radial-gradient(ellipse, rgba(37,99,235,0.06) 0%, transparent 70%)' }} />
+        <div className="glow-blob w-48 h-48 top-10 right-8"
+          style={{ background: 'radial-gradient(ellipse, rgba(96,165,250,0.07) 0%, transparent 70%)' }} />
+
+        <div className="relative max-w-6xl mx-auto">
+
+          {/* Heading */}
+          <div className="text-center mb-14">
+            <p className="label-tag mb-3">Your Personal Stack</p>
+            <h2 className="text-[2rem] sm:text-[2.5rem] font-black text-white tracking-tight leading-tight mb-5">
+              Build your own <span className="gradient-text">AI stack</span>
+            </h2>
+            <p className="text-[15px] text-white/45 max-w-lg mx-auto leading-relaxed">
+              Use ready tools, save them, or request custom ones.<br className="hidden sm:block" />
+              Cabrera AI lets you build your own personal tool library.
+            </p>
+          </div>
+
+          {/* Feature cards */}
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-12">
+            {[
+              {
+                icon: <Search className="w-5 h-5 text-blue-400" />,
+                num: '01',
+                title: 'Discover tools',
+                desc: 'Browse a growing library of AI tools built for real tasks — productivity, health, business and more.',
+                color: 'rgba(37,99,235,0.08)',
+                border: 'rgba(37,99,235,0.2)',
+              },
+              {
+                icon: <BookmarkCheck className="w-5 h-5 text-blue-400" />,
+                num: '02',
+                title: 'Save your favourites',
+                desc: 'Bookmark tools to your personal library. Access everything in one place, anytime.',
+                color: 'rgba(37,99,235,0.12)',
+                border: 'rgba(59,130,246,0.28)',
+                featured: true,
+              },
+              {
+                icon: <Zap className="w-5 h-5 text-blue-400" />,
+                num: '03',
+                title: 'Request a custom build',
+                desc: 'Need something specific? Submit a request and get a tool built around your exact needs.',
+                color: 'rgba(37,99,235,0.08)',
+                border: 'rgba(37,99,235,0.2)',
+              },
+            ].map(item => (
+              <div
+                key={item.num}
+                className="rounded-2xl p-7 border flex flex-col gap-4 transition-all duration-300 hover:-translate-y-1"
+                style={{
+                  background: item.featured
+                    ? 'linear-gradient(145deg, rgba(37,99,235,0.14) 0%, rgba(29,78,216,0.08) 100%)'
+                    : 'linear-gradient(145deg, rgba(8,18,40,0.97) 0%, rgba(5,12,28,0.99) 100%)',
+                  borderColor: item.border,
+                  boxShadow: item.featured ? '0 0 40px rgba(37,99,235,0.12)' : 'none',
+                }}
+              >
+                <div className="flex items-center justify-between">
+                  <div className="w-10 h-10 rounded-xl flex items-center justify-center border"
+                    style={{ background: item.color, borderColor: item.border }}>
+                    {item.icon}
+                  </div>
+                  <span className="text-[11px] font-bold text-white/15">{item.num}</span>
+                </div>
+                <div>
+                  <h3 className="font-bold text-white text-[15px] mb-2">{item.title}</h3>
+                  <p className="text-white/40 text-[13.5px] leading-relaxed">{item.desc}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          {/* CTA row */}
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
+            <Link to="/library" className="btn-primary btn-primary-lg gap-2 w-full sm:w-auto">
+              <BookmarkCheck className="w-4 h-4" /> Open My Library
+            </Link>
+            <Link to="/tools" className="btn-ghost btn-ghost-lg gap-2 w-full sm:w-auto">
+              <Search className="w-4 h-4" /> Browse Tools
+            </Link>
+            <Link to="/request" className="btn-ghost btn-ghost-lg gap-2 w-full sm:w-auto">
+              <Zap className="w-4 h-4" /> Request a Tool
+            </Link>
+          </div>
+
         </div>
       </section>
 

@@ -1,5 +1,5 @@
 import { useParams, Link } from 'react-router-dom';
-import { ArrowLeft, ExternalLink, Clock, CheckCircle, Tag, ArrowRight } from 'lucide-react';
+import { ArrowLeft, ExternalLink, Clock, CheckCircle, Tag, ArrowRight, Bookmark, BookmarkCheck } from 'lucide-react';
 import { useStore } from '../context/StoreContext';
 
 const statusConfig = {
@@ -16,7 +16,7 @@ const badgeConfig = {
 
 export default function ToolDetail() {
   const { slug } = useParams();
-  const { tools } = useStore();
+  const { tools, isToolSaved, saveTool, unsaveTool } = useStore();
   const tool = tools.find(t => t.slug === slug);
 
   if (!tool) {
@@ -35,6 +35,7 @@ export default function ToolDetail() {
   const status = statusConfig[tool.status] || statusConfig['Live'];
   const isComingSoon = tool.status === 'Coming Soon';
   const hasExternalLink = tool.url && tool.url !== '#';
+  const saved = isToolSaved(tool.id);
 
   // Related tools — same category, excluding current
   const related = tools.filter(t => t.category === tool.category && t.id !== tool.id).slice(0, 3);
@@ -96,9 +97,9 @@ export default function ToolDetail() {
           </div>
 
           {/* CTA */}
-          <div className="mt-8 pt-6" style={{ borderTop: '1px solid rgba(37,99,235,0.1)' }}>
+          <div className="mt-8 pt-6 flex flex-wrap items-center gap-3" style={{ borderTop: '1px solid rgba(37,99,235,0.1)' }}>
             {isComingSoon ? (
-              <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4">
+              <>
                 <div
                   className="flex items-center gap-2.5 px-5 py-3 rounded-xl text-sm font-medium text-white/30 cursor-not-allowed"
                   style={{ background: 'rgba(255,255,255,0.03)', border: '1px solid rgba(255,255,255,0.06)' }}
@@ -106,13 +107,10 @@ export default function ToolDetail() {
                   <Clock className="w-4 h-4" />
                   Not available yet
                 </div>
-                <Link
-                  to="/request"
-                  className="btn-ghost text-sm px-5 py-3 gap-2"
-                >
+                <Link to="/request" className="btn-ghost text-sm px-5 py-3 gap-2">
                   Request early access <ArrowRight className="w-3.5 h-3.5" />
                 </Link>
-              </div>
+              </>
             ) : hasExternalLink ? (
               <a
                 href={tool.url}
@@ -124,17 +122,29 @@ export default function ToolDetail() {
                 Open Tool
               </a>
             ) : (
-              <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4">
-                <div
-                  className="flex items-center gap-2.5 px-5 py-3 rounded-xl text-sm font-medium text-white/30 cursor-not-allowed"
-                  style={{ background: 'rgba(255,255,255,0.03)', border: '1px solid rgba(255,255,255,0.06)' }}
-                >
-                  <Clock className="w-4 h-4" />
-                  Link coming soon
-                </div>
-                <span className="text-[12px] text-white/20">This tool is being set up — check back soon.</span>
+              <div
+                className="flex items-center gap-2.5 px-5 py-3 rounded-xl text-sm font-medium text-white/30 cursor-not-allowed"
+                style={{ background: 'rgba(255,255,255,0.03)', border: '1px solid rgba(255,255,255,0.06)' }}
+              >
+                <Clock className="w-4 h-4" />
+                Link coming soon
               </div>
             )}
+
+            {/* Save to Library */}
+            <button
+              onClick={() => saved ? unsaveTool(tool.id) : saveTool(tool.id)}
+              className={`flex items-center gap-2 px-5 py-3 rounded-xl text-sm font-medium border transition-all duration-200 ${
+                saved
+                  ? 'text-blue-400 border-blue-500/30 bg-blue-500/[0.08]'
+                  : 'text-white/45 border-white/10 hover:text-blue-400 hover:border-blue-500/25 hover:bg-blue-500/[0.06]'
+              }`}
+            >
+              {saved
+                ? <><BookmarkCheck className="w-4 h-4" /> Saved</>
+                : <><Bookmark className="w-4 h-4" /> Save to Library</>
+              }
+            </button>
           </div>
         </div>
 

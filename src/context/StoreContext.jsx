@@ -5,10 +5,11 @@ import { marketplaceItems as seedMarketplace } from '../data/marketplace';
 const CTX = createContext(null);
 
 const KEYS = {
-  tools:       'cab_tools',
-  marketplace: 'cab_marketplace',
-  requests:    'cab_requests',
-  categories:  'cab_categories',
+  tools:        'cab_tools',
+  marketplace:  'cab_marketplace',
+  requests:     'cab_requests',
+  categories:   'cab_categories',
+  savedToolIds: 'cab_saved_tools',
 };
 
 function load(key, fallback) {
@@ -29,22 +30,30 @@ export function toSlug(str) {
 }
 
 export function StoreProvider({ children }) {
-  const [tools,       setToolsRaw]  = useState(() => load(KEYS.tools,       seedTools));
-  const [marketplace, setMktRaw]    = useState(() => load(KEYS.marketplace,  seedMarketplace));
-  const [requests,    setReqsRaw]   = useState(() => load(KEYS.requests,     []));
-  const [categories,  setCatsRaw]   = useState(() => load(KEYS.categories,   seedCategories));
+  const [tools,        setToolsRaw]    = useState(() => load(KEYS.tools,        seedTools));
+  const [marketplace,  setMktRaw]      = useState(() => load(KEYS.marketplace,  seedMarketplace));
+  const [requests,     setReqsRaw]     = useState(() => load(KEYS.requests,     []));
+  const [categories,   setCatsRaw]     = useState(() => load(KEYS.categories,   seedCategories));
+  const [savedToolIds, setSavedIdsRaw] = useState(() => load(KEYS.savedToolIds, []));
 
-  const setTools       = d => { setToolsRaw(d);  persist(KEYS.tools,       d); };
-  const setMarketplace = d => { setMktRaw(d);    persist(KEYS.marketplace,  d); };
-  const setRequests    = d => { setReqsRaw(d);   persist(KEYS.requests,     d); };
-  const setCategories  = d => { setCatsRaw(d);   persist(KEYS.categories,   d); };
+  const setTools       = d => { setToolsRaw(d);    persist(KEYS.tools,        d); };
+  const setMarketplace = d => { setMktRaw(d);      persist(KEYS.marketplace,  d); };
+  const setRequests    = d => { setReqsRaw(d);     persist(KEYS.requests,     d); };
+  const setCategories  = d => { setCatsRaw(d);     persist(KEYS.categories,   d); };
+  const setSavedIds    = d => { setSavedIdsRaw(d); persist(KEYS.savedToolIds, d); };
 
-  // ── Tools ────────────────────────────────────────────────────────────────────
+  // ── Tools CRUD ───────────────────────────────────────────────────────────────
   const addTool    = t  => setTools([...tools, { ...t, id: Date.now(), slug: t.slug || toSlug(t.name) }]);
   const updateTool = (id, patch) => setTools(tools.map(t => t.id === id ? { ...t, ...patch } : t));
   const deleteTool = id => setTools(tools.filter(t => t.id !== id));
 
-  // ── Marketplace ──────────────────────────────────────────────────────────────
+  // ── Saved tools ──────────────────────────────────────────────────────────────
+  const saveTool    = id => { if (!savedToolIds.includes(id)) setSavedIds([...savedToolIds, id]); };
+  const unsaveTool  = id => setSavedIds(savedToolIds.filter(x => x !== id));
+  const isToolSaved = id => savedToolIds.includes(id);
+  const savedTools  = tools.filter(t => savedToolIds.includes(t.id));
+
+  // ── Marketplace CRUD ─────────────────────────────────────────────────────────
   const addProduct    = p  => setMarketplace([...marketplace, { ...p, id: Date.now() }]);
   const updateProduct = (id, patch) => setMarketplace(marketplace.map(m => m.id === id ? { ...m, ...patch } : m));
   const deleteProduct = id => setMarketplace(marketplace.filter(m => m.id !== id));
@@ -68,7 +77,9 @@ export function StoreProvider({ children }) {
   return (
     <CTX.Provider value={{
       tools, marketplace, requests, categories, statuses,
+      savedTools, savedToolIds,
       addTool, updateTool, deleteTool,
+      saveTool, unsaveTool, isToolSaved,
       addProduct, updateProduct, deleteProduct,
       addRequest, updateRequestStatus, deleteRequest,
       addCategory, deleteCategory,

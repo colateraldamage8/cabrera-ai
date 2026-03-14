@@ -1,5 +1,6 @@
-import { ExternalLink, Lock, Clock } from 'lucide-react';
+import { ExternalLink, Lock, Clock, Bookmark, BookmarkCheck } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import { useStore } from '../context/StoreContext';
 
 const statusConfig = {
   'Live':        { pill: 'bg-emerald-500/[0.1] text-emerald-400 border-emerald-500/20', dot: 'bg-emerald-400' },
@@ -14,8 +15,16 @@ const badgeConfig = {
 };
 
 export default function ToolCard({ tool }) {
-  const status = statusConfig[tool.status] || statusConfig['Live'];
+  const { isToolSaved, saveTool, unsaveTool } = useStore();
+  const status  = statusConfig[tool.status] || statusConfig['Live'];
+  const saved   = isToolSaved(tool.id);
   const isDisabled = tool.status === 'Coming Soon';
+
+  const toggleSave = e => {
+    e.preventDefault();
+    e.stopPropagation();
+    saved ? unsaveTool(tool.id) : saveTool(tool.id);
+  };
 
   return (
     <div className="card p-5 flex flex-col gap-4 group">
@@ -38,7 +47,7 @@ export default function ToolCard({ tool }) {
           </div>
         </div>
 
-        {/* Badges */}
+        {/* Badges + save */}
         <div className="flex flex-col items-end gap-1.5 shrink-0">
           <span className={`flex items-center gap-1.5 text-[11px] font-medium px-2 py-0.5 rounded-full border ${status.pill}`}>
             <span className={`w-1.5 h-1.5 rounded-full shrink-0 ${status.dot}`}></span>
@@ -49,6 +58,18 @@ export default function ToolCard({ tool }) {
               {tool.badge}
             </span>
           )}
+          <button
+            onClick={toggleSave}
+            title={saved ? 'Remove from library' : 'Save to library'}
+            className={`mt-0.5 transition-colors duration-200 ${
+              saved ? 'text-blue-400' : 'text-white/20 hover:text-blue-400'
+            }`}
+          >
+            {saved
+              ? <BookmarkCheck className="w-4 h-4" />
+              : <Bookmark className="w-4 h-4" />
+            }
+          </button>
         </div>
       </div>
 

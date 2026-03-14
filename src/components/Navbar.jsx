@@ -80,39 +80,42 @@ export default function Navbar() {
       </div>
 
       {/* Mobile drawer */}
-      {open && (
-        <div className="md:hidden border-t border-white/[0.04]" style={{ background: 'rgba(4,14,28,0.97)', backdropFilter: 'blur(20px)' }}>
-          <div className="px-4 py-4 space-y-0.5">
-            {navLinks.map(link => (
-              <Link
-                key={link.path}
-                to={link.path}
-                onClick={() => setOpen(false)}
-                className={`flex items-center px-3 py-2.5 rounded-lg text-sm font-medium transition-colors ${
-                  active(link.path) ? 'bg-blue-500/[0.09]' : 'text-white/55 hover:text-white hover:bg-white/[0.04]'
-                }`}
-                style={active(link.path) ? { color: '#60a5fa' } : {}}
-              >
-                {link.label}
-              </Link>
-            ))}
+      <div
+        className={`md:hidden border-t border-white/[0.04] overflow-hidden transition-all duration-300 ease-in-out ${
+          open ? 'max-h-[400px] opacity-100' : 'max-h-0 opacity-0'
+        }`}
+        style={{ background: 'rgba(4,14,28,0.97)', backdropFilter: 'blur(20px)' }}
+      >
+        <div className="px-4 py-4 space-y-0.5">
+          {navLinks.map(link => (
             <Link
-              to="/library"
+              key={link.path}
+              to={link.path}
               onClick={() => setOpen(false)}
               className={`flex items-center px-3 py-2.5 rounded-lg text-sm font-medium transition-colors ${
-                active('/library') ? 'bg-blue-500/[0.09]' : 'text-white/55 hover:text-white hover:bg-white/[0.04]'
+                active(link.path) ? 'bg-blue-500/[0.09]' : 'text-white/55 hover:text-white hover:bg-white/[0.04]'
               }`}
-              style={active('/library') ? { color: '#60a5fa' } : {}}
+              style={active(link.path) ? { color: '#60a5fa' } : {}}
             >
-              My Library
+              {link.label}
             </Link>
-            <div className="grid grid-cols-2 gap-2.5 pt-3">
-              <Link to="/login" onClick={() => setOpen(false)} className="btn-ghost py-2.5 text-sm">Login</Link>
-              <Link to="/signup" onClick={() => setOpen(false)} className="btn-primary py-2.5 text-sm">Get Started</Link>
-            </div>
+          ))}
+          <Link
+            to="/library"
+            onClick={() => setOpen(false)}
+            className={`flex items-center px-3 py-2.5 rounded-lg text-sm font-medium transition-colors ${
+              active('/library') ? 'bg-blue-500/[0.09]' : 'text-white/55 hover:text-white hover:bg-white/[0.04]'
+            }`}
+            style={active('/library') ? { color: '#60a5fa' } : {}}
+          >
+            My Library
+          </Link>
+          <div className="grid grid-cols-2 gap-2.5 pt-3">
+            <Link to="/login" onClick={() => setOpen(false)} className="btn-ghost py-2.5 text-sm">Login</Link>
+            <Link to="/signup" onClick={() => setOpen(false)} className="btn-primary py-2.5 text-sm">Get Started</Link>
           </div>
         </div>
-      )}
+      </div>
     </nav>
   );
 }

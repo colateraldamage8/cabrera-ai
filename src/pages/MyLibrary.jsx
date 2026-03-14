@@ -31,7 +31,7 @@ function SectionHeading({ icon, label }) {
   return (
     <h2 className="flex items-center gap-2 mb-4">
       {icon}
-      <span className="text-xs font-semibold uppercase tracking-widest" style={{ color: 'rgba(34,211,238,0.7)' }}>{label}</span>
+      <span className="text-xs font-semibold uppercase tracking-widest" style={{ color: 'rgba(96,165,250,0.7)' }}>{label}</span>
     </h2>
   );
 }
@@ -48,7 +48,7 @@ function Row({ left, right }) {
 function StatusPill({ status }) {
   const map = {
     'In Review': 'bg-amber-500/10 text-amber-400 border-amber-500/20',
-    'Building':  'bg-cyan-500/10 text-cyan-400 border-cyan-500/20',
+    'Building':  'bg-blue-500/10 text-blue-400 border-blue-500/20',
     'Done':      'bg-emerald-500/10 text-emerald-400 border-emerald-500/20',
   };
   return (
@@ -68,20 +68,20 @@ export default function MyLibrary() {
         {/* Header */}
         <div className="flex items-center justify-between mb-10">
           <div>
-            <p className="text-cyan-500 text-xs font-semibold uppercase tracking-widest mb-1">Dashboard</p>
+            <p className="text-blue-500 text-xs font-semibold uppercase tracking-widest mb-1">Dashboard</p>
             <h1 className="text-3xl font-black text-white">My Library</h1>
             <p className="text-white/35 text-sm mt-1">Your saved tools, purchases, and activity</p>
           </div>
           <div className="flex items-center gap-3">
             <div
-              className="w-10 h-10 rounded-full flex items-center justify-center text-white font-bold text-sm border border-cyan-500/25"
+              className="w-10 h-10 rounded-full flex items-center justify-center text-white font-bold text-sm border border-blue-500/25"
               style={{ background: 'linear-gradient(135deg, #0891b2, #2563eb)' }}
             >
               JD
             </div>
             <div className="hidden sm:block">
               <div className="text-white font-medium text-sm">Joseph D.</div>
-              <div className="text-cyan-500/60 text-xs">Free Plan</div>
+              <div className="text-blue-500/60 text-xs">Free Plan</div>
             </div>
           </div>
         </div>
@@ -89,7 +89,7 @@ export default function MyLibrary() {
         {/* Stat row */}
         <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 mb-10">
           {[
-            { icon: <BookMarked  className="w-4 h-4 text-cyan-400" />,    label: 'Saved Tools',   count: savedTools.length,      color: 'rgba(6,182,212,0.08)',   border: 'rgba(6,182,212,0.2)'  },
+            { icon: <BookMarked  className="w-4 h-4 text-blue-400" />,    label: 'Saved Tools',   count: savedTools.length,      color: 'rgba(37,99,235,0.1)',   border: 'rgba(6,182,212,0.2)'  },
             { icon: <ShoppingBag className="w-4 h-4 text-blue-400" />,   label: 'Purchased',      count: purchasedProducts.length, color: 'rgba(59,130,246,0.08)', border: 'rgba(59,130,246,0.2)' },
             { icon: <MessageSquare className="w-4 h-4 text-amber-400" />, label: 'My Requests',  count: myRequests.length,        color: 'rgba(245,158,11,0.08)', border: 'rgba(245,158,11,0.2)' },
             { icon: <Activity     className="w-4 h-4 text-emerald-400" />, label: 'Activities',  count: recentActivity.length,    color: 'rgba(16,185,129,0.08)', border: 'rgba(16,185,129,0.2)' },
@@ -97,7 +97,7 @@ export default function MyLibrary() {
             <div
               key={s.label}
               className="rounded-2xl p-5 flex items-center gap-4 border"
-              style={{ background: 'rgba(10,18,36,0.9)', borderColor: 'rgba(6,182,212,0.1)' }}
+              style={{ background: 'rgba(6,12,26,0.92)', borderColor: 'rgba(37,99,235,0.12)' }}
             >
               <div className="w-10 h-10 rounded-xl flex items-center justify-center border shrink-0"
                 style={{ background: s.color, borderColor: s.border }}>
@@ -119,7 +119,7 @@ export default function MyLibrary() {
 
             {/* 1. Saved Tools */}
             <div>
-              <SectionHeading icon={<BookMarked className="w-4 h-4 text-cyan-400" />} label="Saved Tools" />
+              <SectionHeading icon={<BookMarked className="w-4 h-4 text-blue-400" />} label="Saved Tools" />
               <div className="space-y-2">
                 {savedTools.map(tool => (
                   <Row
@@ -134,7 +134,7 @@ export default function MyLibrary() {
                       </div>
                     }
                     right={
-                      <button className="text-xs text-cyan-400 hover:text-cyan-300 font-medium transition-colors shrink-0">
+                      <button className="text-xs text-blue-400 hover:text-blue-300 font-medium transition-colors shrink-0">
                         Open →
                       </button>
                     }
@@ -215,7 +215,7 @@ export default function MyLibrary() {
                   />
                 ))}
                 <div className="pt-1">
-                  <Link to="/request" className="text-xs text-cyan-400 hover:text-cyan-300 font-medium transition-colors">
+                  <Link to="/request" className="text-xs text-blue-400 hover:text-blue-300 font-medium transition-colors">
                     + Submit a new request
                   </Link>
                 </div>
@@ -229,13 +229,13 @@ export default function MyLibrary() {
 
             {/* 5. Recommended Tools */}
             <div>
-              <SectionHeading icon={<Sparkles className="w-4 h-4 text-cyan-400" />} label="Recommended Tools" />
+              <SectionHeading icon={<Sparkles className="w-4 h-4 text-blue-400" />} label="Recommended Tools" />
               <div className="space-y-2">
                 {recommended.map(tool => (
                   <div
                     key={tool.id}
-                    className="rounded-xl px-3 py-3 flex items-center gap-3 cursor-pointer border border-cyan-500/8 hover:border-cyan-500/20 transition-all duration-200"
-                    style={{ background: 'rgba(10,18,36,0.7)' }}
+                    className="rounded-xl px-3 py-3 flex items-center gap-3 cursor-pointer border border-blue-500/8 hover:border-blue-500/20 transition-all duration-200"
+                    style={{ background: 'rgba(6,12,26,0.8)' }}
                   >
                     <span className="text-xl shrink-0">{tool.icon}</span>
                     <div className="flex-1 min-w-0">
@@ -247,7 +247,7 @@ export default function MyLibrary() {
                         tool.status === 'Live'
                           ? 'bg-emerald-500/10 text-emerald-400 border-emerald-500/20'
                           : tool.status === 'Beta'
-                          ? 'bg-cyan-500/10 text-cyan-400 border-cyan-500/20'
+                          ? 'bg-blue-500/10 text-blue-400 border-blue-500/20'
                           : 'bg-amber-500/10 text-amber-400 border-amber-500/20'
                       }`}
                     >
@@ -265,8 +265,8 @@ export default function MyLibrary() {
                 {continueExploring.map(tool => (
                   <div
                     key={tool.id}
-                    className="rounded-xl px-3 py-3 flex items-center gap-3 cursor-pointer border border-cyan-500/8 hover:border-cyan-500/20 transition-all duration-200"
-                    style={{ background: 'rgba(10,18,36,0.7)' }}
+                    className="rounded-xl px-3 py-3 flex items-center gap-3 cursor-pointer border border-blue-500/8 hover:border-blue-500/20 transition-all duration-200"
+                    style={{ background: 'rgba(6,12,26,0.8)' }}
                   >
                     <span className="text-xl shrink-0">{tool.icon}</span>
                     <div className="flex-1 min-w-0">
@@ -276,7 +276,7 @@ export default function MyLibrary() {
                   </div>
                 ))}
                 <div className="pt-1">
-                  <Link to="/tools" className="text-xs text-cyan-400 hover:text-cyan-300 font-medium transition-colors flex items-center gap-1">
+                  <Link to="/tools" className="text-xs text-blue-400 hover:text-blue-300 font-medium transition-colors flex items-center gap-1">
                     Browse all tools <ArrowRight className="w-3 h-3" />
                   </Link>
                 </div>
@@ -285,17 +285,17 @@ export default function MyLibrary() {
 
             {/* Upgrade CTA */}
             <div
-              className="rounded-2xl p-6 border border-cyan-500/15 relative overflow-hidden"
-              style={{ background: 'linear-gradient(135deg, rgba(6,182,212,0.07) 0%, rgba(37,99,235,0.07) 100%)' }}
+              className="rounded-2xl p-6 border border-blue-500/15 relative overflow-hidden"
+              style={{ background: 'linear-gradient(135deg, rgba(37,99,235,0.08) 0%, rgba(37,99,235,0.07) 100%)' }}
             >
               <div className="glow-blob w-32 h-32 -top-4 -right-4"
                 style={{ background: 'radial-gradient(ellipse, rgba(6,182,212,0.15) 0%, transparent 70%)' }} />
               <div className="relative">
                 <div
-                  className="w-10 h-10 rounded-xl flex items-center justify-center mb-4 border border-cyan-500/20"
-                  style={{ background: 'rgba(6,182,212,0.1)' }}
+                  className="w-10 h-10 rounded-xl flex items-center justify-center mb-4 border border-blue-500/20"
+                  style={{ background: 'rgba(37,99,235,0.12)' }}
                 >
-                  <Zap className="w-5 h-5 text-cyan-400" />
+                  <Zap className="w-5 h-5 text-blue-400" />
                 </div>
                 <h3 className="font-bold text-white text-sm mb-1.5">Upgrade to Pro</h3>
                 <p className="text-white/35 text-xs mb-4 leading-relaxed">

@@ -12,9 +12,9 @@ const REQ_STATUSES   = ['New', 'In Review', 'Building', 'Done', 'Declined'];
 
 const statusPill = {
   'Live':        'bg-emerald-500/10 text-emerald-400 border-emerald-500/20',
-  'Beta':        'bg-cyan-500/10 text-cyan-400 border-cyan-500/20',
+  'Beta':        'bg-blue-500/10 text-blue-400 border-blue-500/20',
   'Coming Soon': 'bg-amber-500/10 text-amber-400 border-amber-500/20',
-  'New':         'bg-cyan-500/10 text-cyan-400 border-cyan-500/20',
+  'New':         'bg-blue-500/10 text-blue-400 border-blue-500/20',
   'In Review':   'bg-amber-500/10 text-amber-400 border-amber-500/20',
   'Building':    'bg-blue-500/10 text-blue-400 border-blue-500/20',
   'Done':        'bg-emerald-500/10 text-emerald-400 border-emerald-500/20',
@@ -39,7 +39,7 @@ function Field({ children }) {
 
 function SectionTitle({ children }) {
   return (
-    <h3 className="text-xs font-semibold uppercase tracking-widest mb-4" style={{ color: 'rgba(34,211,238,0.6)' }}>
+    <h3 className="text-xs font-semibold uppercase tracking-widest mb-4" style={{ color: 'rgba(96,165,250,0.65)' }}>
       {children}
     </h3>
   );
@@ -130,7 +130,7 @@ function ToolsTab() {
         <form
           onSubmit={handleSubmit}
           className="rounded-2xl p-6 mb-6 border space-y-4"
-          style={{ background: 'rgba(6,182,212,0.03)', borderColor: 'rgba(6,182,212,0.15)' }}
+          style={{ background: 'rgba(37,99,235,0.04)', borderColor: 'rgba(6,182,212,0.15)' }}
         >
           <SectionTitle>New Tool</SectionTitle>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
@@ -191,10 +191,10 @@ function ToolsTab() {
 
       {/* Table */}
       {tools.length === 0 ? <EmptyState message="No tools yet. Add your first one above." /> : (
-        <div className="rounded-2xl border overflow-hidden" style={{ borderColor: 'rgba(6,182,212,0.1)' }}>
+        <div className="rounded-2xl border overflow-hidden" style={{ borderColor: 'rgba(37,99,235,0.12)' }}>
           <table className="w-full text-[12.5px]">
             <thead>
-              <tr style={{ background: 'rgba(6,182,212,0.05)', borderBottom: '1px solid rgba(6,182,212,0.1)' }}>
+              <tr style={{ background: 'rgba(37,99,235,0.06)', borderBottom: '1px solid rgba(37,99,235,0.12)' }}>
                 {['Icon', 'Name', 'Category', 'Status', 'Badge', 'URL', ''].map(h => (
                   <th key={h} className="text-left px-4 py-3 text-[10.5px] font-semibold uppercase tracking-widest text-white/25">{h}</th>
                 ))}
@@ -205,8 +205,8 @@ function ToolsTab() {
                 <tr
                   key={t.id}
                   style={{
-                    background: i % 2 === 0 ? 'rgba(10,18,36,0.9)' : 'rgba(10,18,36,0.6)',
-                    borderBottom: '1px solid rgba(6,182,212,0.05)',
+                    background: i % 2 === 0 ? 'rgba(6,12,26,0.92)' : 'rgba(10,18,36,0.6)',
+                    borderBottom: '1px solid rgba(37,99,235,0.06)',
                   }}
                 >
                   <td className="px-4 py-3 text-lg">{t.icon}</td>
@@ -290,7 +290,7 @@ function MarketplaceTab() {
         <form
           onSubmit={handleSubmit}
           className="rounded-2xl p-6 mb-6 border space-y-4"
-          style={{ background: 'rgba(6,182,212,0.03)', borderColor: 'rgba(6,182,212,0.15)' }}
+          style={{ background: 'rgba(37,99,235,0.04)', borderColor: 'rgba(6,182,212,0.15)' }}
         >
           <SectionTitle>New Product</SectionTitle>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
@@ -344,10 +344,10 @@ function MarketplaceTab() {
       )}
 
       {marketplace.length === 0 ? <EmptyState message="No products yet." /> : (
-        <div className="rounded-2xl border overflow-hidden" style={{ borderColor: 'rgba(6,182,212,0.1)' }}>
+        <div className="rounded-2xl border overflow-hidden" style={{ borderColor: 'rgba(37,99,235,0.12)' }}>
           <table className="w-full text-[12.5px]">
             <thead>
-              <tr style={{ background: 'rgba(6,182,212,0.05)', borderBottom: '1px solid rgba(6,182,212,0.1)' }}>
+              <tr style={{ background: 'rgba(37,99,235,0.06)', borderBottom: '1px solid rgba(37,99,235,0.12)' }}>
                 {['Icon', 'Name', 'Type', 'Price', 'Badge', 'Rating', 'Sales', ''].map(h => (
                   <th key={h} className="text-left px-4 py-3 text-[10.5px] font-semibold uppercase tracking-widest text-white/25">{h}</th>
                 ))}
@@ -358,8 +358,8 @@ function MarketplaceTab() {
                 <tr
                   key={m.id}
                   style={{
-                    background: i % 2 === 0 ? 'rgba(10,18,36,0.9)' : 'rgba(10,18,36,0.6)',
-                    borderBottom: '1px solid rgba(6,182,212,0.05)',
+                    background: i % 2 === 0 ? 'rgba(6,12,26,0.92)' : 'rgba(10,18,36,0.6)',
+                    borderBottom: '1px solid rgba(37,99,235,0.06)',
                   }}
                 >
                   <td className="px-4 py-3 text-lg">{m.icon}</td>
@@ -412,7 +412,7 @@ function RequestsTab() {
           <div
             key={r.id}
             className="rounded-2xl p-5 border"
-            style={{ background: 'rgba(10,18,36,0.9)', borderColor: 'rgba(6,182,212,0.1)' }}
+            style={{ background: 'rgba(6,12,26,0.92)', borderColor: 'rgba(37,99,235,0.12)' }}
           >
             <div className="flex flex-col sm:flex-row sm:items-start gap-4">
               <div className="flex-1 min-w-0">
@@ -427,7 +427,7 @@ function RequestsTab() {
                   <span><span className="text-white/25">Submitted:</span> {new Date(r.submittedAt).toLocaleDateString('en-GB')}</span>
                 </div>
                 {r.description && (
-                  <p className="text-white/30 text-[12px] leading-relaxed border-l-2 border-cyan-500/20 pl-3 italic">
+                  <p className="text-white/30 text-[12px] leading-relaxed border-l-2 border-blue-500/20 pl-3 italic">
                     {r.description}
                   </p>
                 )}
@@ -487,7 +487,7 @@ function CategoriesTab() {
           <div
             key={c}
             className="flex items-center gap-2 px-3 py-1.5 rounded-full text-[12px] border"
-            style={{ background: 'rgba(6,182,212,0.06)', borderColor: 'rgba(6,182,212,0.15)', color: 'rgba(34,211,238,0.7)' }}
+            style={{ background: 'rgba(37,99,235,0.07)', borderColor: 'rgba(6,182,212,0.15)', color: 'rgba(96,165,250,0.7)' }}
           >
             {c}
             {c !== 'All' && (
@@ -541,7 +541,7 @@ export default function Admin() {
         {/* Header */}
         <div className="flex items-start justify-between mb-10">
           <div>
-            <p className="text-xs font-semibold uppercase tracking-widest mb-1" style={{ color: 'rgba(34,211,238,0.6)' }}>
+            <p className="text-xs font-semibold uppercase tracking-widest mb-1" style={{ color: 'rgba(96,165,250,0.65)' }}>
               Internal
             </p>
             <h1 className="text-3xl font-black text-white">Admin Panel</h1>
@@ -579,7 +579,7 @@ export default function Admin() {
         {/* Tab nav */}
         <div
           className="flex gap-1 p-1 rounded-xl mb-8"
-          style={{ background: 'rgba(10,18,36,0.9)', border: '1px solid rgba(6,182,212,0.1)' }}
+          style={{ background: 'rgba(6,12,26,0.92)', border: '1px solid rgba(37,99,235,0.12)' }}
         >
           {TABS.map(tab => {
             const Icon = tab.icon;
@@ -603,7 +603,7 @@ export default function Admin() {
                 {counts[tab.id] !== undefined && (
                   <span
                     className={`text-[10px] font-bold px-1.5 py-0.5 rounded-full ml-0.5 ${
-                      isActive ? 'bg-cyan-500/20 text-cyan-400' : 'bg-white/5 text-white/25'
+                      isActive ? 'bg-blue-500/20 text-blue-400' : 'bg-white/5 text-white/25'
                     }`}
                   >
                     {counts[tab.id]}
@@ -617,7 +617,7 @@ export default function Admin() {
         {/* Tab content */}
         <div
           className="rounded-2xl p-6 sm:p-8 border"
-          style={{ background: 'rgba(10,18,36,0.7)', borderColor: 'rgba(6,182,212,0.08)' }}
+          style={{ background: 'rgba(6,12,26,0.8)', borderColor: 'rgba(37,99,235,0.1)' }}
         >
           {activeTab === 'tools'       && <ToolsTab />}
           {activeTab === 'marketplace' && <MarketplaceTab />}

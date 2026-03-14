@@ -3,7 +3,7 @@ import { Star, ShoppingCart, Users } from 'lucide-react';
 const badgeConfig = {
   'Popular': 'bg-orange-500/[0.1] text-orange-400 border-orange-500/20',
   'Premium': 'bg-violet-500/[0.1] text-violet-400 border-violet-500/20',
-  'Custom':  'bg-cyan-500/[0.1] text-cyan-400 border-cyan-500/20',
+  'Custom':  'bg-blue-500/[0.1] text-blue-400 border-blue-500/20',
   'New':     'bg-emerald-500/[0.1] text-emerald-400 border-emerald-500/20',
 };
 
@@ -17,8 +17,8 @@ export default function MarketplaceCard({ item }) {
           <div
             className="w-11 h-11 rounded-xl flex items-center justify-center text-xl shrink-0 border transition-colors duration-300"
             style={{
-              background: 'linear-gradient(145deg, rgba(6,182,212,0.12) 0%, rgba(37,99,235,0.1) 100%)',
-              borderColor: 'rgba(6,182,212,0.14)',
+              background: 'linear-gradient(145deg, rgba(37,99,235,0.12) 0%, rgba(37,99,235,0.1) 100%)',
+              borderColor: 'rgba(37,99,235,0.14)',
             }}
           >
             {item.icon}
@@ -42,7 +42,7 @@ export default function MarketplaceCard({ item }) {
       <ul className="space-y-1.5">
         {item.features.map(f => (
           <li key={f} className="flex items-center gap-2 text-[12px] text-white/35">
-            <span className="w-1 h-1 rounded-full bg-cyan-500/60 shrink-0"></span>
+            <span className="w-1 h-1 rounded-full bg-blue-500/60 shrink-0"></span>
             {f}
           </li>
         ))}
@@ -63,7 +63,7 @@ export default function MarketplaceCard({ item }) {
       {/* Price + CTA */}
       <div
         className="flex items-center justify-between gap-3 pt-3"
-        style={{ borderTop: '1px solid rgba(6,182,212,0.07)' }}
+        style={{ borderTop: '1px solid rgba(37,99,235,0.08)' }}
       >
         <div className="leading-none">
           <div className="text-xl font-bold text-white">{item.price}</div>

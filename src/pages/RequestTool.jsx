@@ -39,10 +39,10 @@ export default function RequestTool() {
       <div className="min-h-screen pt-24 pb-16 px-4 flex items-center justify-center animate-fade-in">
         <div className="text-center max-w-md">
           <div
-            className="w-20 h-20 rounded-2xl flex items-center justify-center mx-auto mb-6 border border-cyan-500/20"
-            style={{ background: 'rgba(6,182,212,0.08)' }}
+            className="w-20 h-20 rounded-2xl flex items-center justify-center mx-auto mb-6 border border-blue-500/20"
+            style={{ background: 'rgba(37,99,235,0.1)' }}
           >
-            <CheckCircle className="w-10 h-10 text-cyan-400" />
+            <CheckCircle className="w-10 h-10 text-blue-400" />
           </div>
           <h2 className="text-3xl font-bold text-white mb-3">Request Received!</h2>
           <p className="text-white/35 text-sm mb-8">
@@ -63,20 +63,20 @@ export default function RequestTool() {
         {/* Header */}
         <div className="text-center mb-12">
           <div
-            className="w-16 h-16 rounded-2xl flex items-center justify-center mx-auto mb-5 border border-cyan-500/20"
-            style={{ background: 'rgba(6,182,212,0.08)' }}
+            className="w-16 h-16 rounded-2xl flex items-center justify-center mx-auto mb-5 border border-blue-500/20"
+            style={{ background: 'rgba(37,99,235,0.1)' }}
           >
             <Logo size={36} />
           </div>
-          <p className="text-cyan-500 text-xs font-semibold uppercase tracking-widest mb-2">Custom Build Studio</p>
+          <p className="text-blue-500 text-xs font-semibold uppercase tracking-widest mb-2">Custom Build Studio</p>
           <h1 className="text-4xl font-black text-white mb-3">Request a Custom Tool</h1>
           <p className="text-white/35 text-sm">Tell us your idea. We'll build it — fast, clean, and ready to use.</p>
         </div>
 
         <form
           onSubmit={handleSubmit}
-          className="rounded-2xl p-8 space-y-6 border border-cyan-500/10"
-          style={{ background: 'rgba(10,18,36,0.95)' }}
+          className="rounded-2xl p-8 space-y-6 border border-blue-500/10"
+          style={{ background: 'rgba(6,12,26,0.95)' }}
         >
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
             <div>

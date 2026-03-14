@@ -3,14 +3,14 @@ import { Link } from 'react-router-dom';
 
 const statusConfig = {
   'Live':        { pill: 'bg-emerald-500/[0.1] text-emerald-400 border-emerald-500/20', dot: 'bg-emerald-400' },
-  'Beta':        { pill: 'bg-cyan-500/[0.1] text-cyan-400 border-cyan-500/20',          dot: 'bg-cyan-400' },
+  'Beta':        { pill: 'bg-blue-500/[0.1] text-blue-400 border-blue-500/20',          dot: 'bg-cyan-400' },
   'Coming Soon': { pill: 'bg-amber-500/[0.1] text-amber-400 border-amber-500/20',       dot: 'bg-amber-400' },
 };
 
 const badgeConfig = {
   'Popular': 'bg-orange-500/[0.1] text-orange-400 border-orange-500/20',
   'Premium': 'bg-violet-500/[0.1] text-violet-400 border-violet-500/20',
-  'New':     'bg-cyan-500/[0.1] text-cyan-400 border-cyan-500/20',
+  'New':     'bg-blue-500/[0.1] text-blue-400 border-blue-500/20',
 };
 
 export default function ToolCard({ tool }) {
@@ -26,8 +26,8 @@ export default function ToolCard({ tool }) {
           <div
             className="w-11 h-11 rounded-xl flex items-center justify-center text-xl shrink-0 border transition-colors duration-300"
             style={{
-              background: 'linear-gradient(145deg, rgba(6,182,212,0.12) 0%, rgba(37,99,235,0.1) 100%)',
-              borderColor: 'rgba(6,182,212,0.14)',
+              background: 'linear-gradient(145deg, rgba(37,99,235,0.12) 0%, rgba(37,99,235,0.1) 100%)',
+              borderColor: 'rgba(37,99,235,0.14)',
             }}
           >
             {tool.icon}
@@ -60,8 +60,8 @@ export default function ToolCard({ tool }) {
         {tool.tags.map(tag => (
           <span
             key={tag}
-            className="text-[11px] text-cyan-500/45 px-2 py-0.5 rounded-full"
-            style={{ background: 'rgba(6,182,212,0.05)', border: '1px solid rgba(6,182,212,0.1)' }}
+            className="text-[11px] text-blue-500/45 px-2 py-0.5 rounded-full"
+            style={{ background: 'rgba(37,99,235,0.06)', border: '1px solid rgba(37,99,235,0.12)' }}
           >
             #{tag}
           </span>

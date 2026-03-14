@@ -33,7 +33,7 @@ export default function Marketplace() {
         </div>
 
         {/* Filter panel */}
-        <div className="rounded-2xl p-5 mb-8 border" style={{ background: 'rgba(10,18,36,0.9)', borderColor: 'rgba(6,182,212,0.1)' }}>
+        <div className="rounded-2xl p-5 mb-8 border" style={{ background: 'rgba(6,12,26,0.92)', borderColor: 'rgba(37,99,235,0.12)' }}>
           <div className="relative mb-4">
             <Search className="absolute left-3.5 top-1/2 -translate-y-1/2 w-4 h-4" style={{ color: 'rgba(6,182,212,0.4)' }} />
             <input
@@ -62,7 +62,7 @@ export default function Marketplace() {
 
         {/* Count */}
         <p className="text-[13px] mb-6" style={{ color: 'rgba(255,255,255,0.3)' }}>
-          <span className="text-cyan-400 font-semibold">{filtered.length}</span>{' '}
+          <span className="text-blue-400 font-semibold">{filtered.length}</span>{' '}
           product{filtered.length !== 1 ? 's' : ''} available
         </p>
 

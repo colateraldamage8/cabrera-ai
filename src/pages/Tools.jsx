@@ -31,7 +31,7 @@ export default function Tools() {
         </div>
 
         {/* Filter panel */}
-        <div className="rounded-2xl p-5 mb-8 border" style={{ background: 'rgba(10,18,36,0.9)', borderColor: 'rgba(6,182,212,0.1)' }}>
+        <div className="rounded-2xl p-5 mb-8 border" style={{ background: 'rgba(6,12,26,0.92)', borderColor: 'rgba(37,99,235,0.12)' }}>
           {/* Search */}
           <div className="relative mb-4">
             <Search className="absolute left-3.5 top-1/2 -translate-y-1/2 w-4 h-4" style={{ color: 'rgba(6,182,212,0.4)' }} />
@@ -57,7 +57,7 @@ export default function Tools() {
                 ))}
               </div>
             </div>
-            <div className="sm:ml-6 sm:border-l sm:pl-6" style={{ borderColor: 'rgba(6,182,212,0.08)' }}>
+            <div className="sm:ml-6 sm:border-l sm:pl-6" style={{ borderColor: 'rgba(37,99,235,0.1)' }}>
               <p className="text-[10.5px] text-white/22 font-semibold uppercase tracking-widest mb-2">Status</p>
               <div className="flex flex-wrap gap-1.5">
                 {statuses.map(s => (
@@ -74,7 +74,7 @@ export default function Tools() {
         {/* Result count */}
         <div className="flex items-center justify-between mb-6">
           <p className="text-[13px]" style={{ color: 'rgba(255,255,255,0.3)' }}>
-            Showing <span className="text-cyan-400 font-semibold">{filtered.length}</span> tool{filtered.length !== 1 ? 's' : ''}
+            Showing <span className="text-blue-400 font-semibold">{filtered.length}</span> tool{filtered.length !== 1 ? 's' : ''}
           </p>
           <span className="flex items-center gap-1.5 text-[12px]" style={{ color: 'rgba(255,255,255,0.2)' }}>
             <SlidersHorizontal className="w-3.5 h-3.5" /> Filtered

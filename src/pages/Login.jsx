@@ -12,7 +12,7 @@ export default function Login() {
 
       {/* Background glow */}
       <div className="glow-blob w-96 h-96 top-0 left-1/2 -translate-x-1/2 -translate-y-1/2"
-        style={{ background: 'radial-gradient(ellipse, rgba(6,182,212,0.08) 0%, transparent 70%)' }} />
+        style={{ background: 'radial-gradient(ellipse, rgba(37,99,235,0.1) 0%, transparent 70%)' }} />
 
       <div className="relative w-full max-w-md">
 
@@ -24,7 +24,7 @@ export default function Login() {
               <span className="font-bold text-lg">
                 <span className="gradient-text">Cabrera</span><span className="text-white"> AI</span>
               </span>
-              <span className="text-[10px] text-cyan-500/60 font-medium tracking-widest uppercase">AI Tool Library</span>
+              <span className="text-[10px] text-blue-500/60 font-medium tracking-widest uppercase">AI Tool Library</span>
             </div>
           </Link>
           <h1 className="text-3xl font-black text-white mb-1.5">Welcome back</h1>
@@ -33,8 +33,8 @@ export default function Login() {
 
         {/* Card */}
         <div
-          className="rounded-2xl p-8 space-y-5 border border-cyan-500/10"
-          style={{ background: 'rgba(10,18,36,0.95)' }}
+          className="rounded-2xl p-8 space-y-5 border border-blue-500/10"
+          style={{ background: 'rgba(6,12,26,0.95)' }}
         >
           {/* Google */}
           <button className="w-full btn-secondary py-3 text-sm justify-center gap-3">
@@ -42,9 +42,9 @@ export default function Login() {
           </button>
 
           <div className="flex items-center gap-3">
-            <div className="flex-1 h-px" style={{ background: 'rgba(6,182,212,0.1)' }}></div>
+            <div className="flex-1 h-px" style={{ background: 'rgba(37,99,235,0.12)' }}></div>
             <span className="text-white/20 text-xs">or</span>
-            <div className="flex-1 h-px" style={{ background: 'rgba(6,182,212,0.1)' }}></div>
+            <div className="flex-1 h-px" style={{ background: 'rgba(37,99,235,0.12)' }}></div>
           </div>
 
           {/* Email */}
@@ -63,7 +63,7 @@ export default function Login() {
           <div>
             <div className="flex items-center justify-between mb-2">
               <label className="text-xs font-medium text-white/40 uppercase tracking-wide">Password</label>
-              <Link to="/forgot-password" className="text-xs text-cyan-400 hover:text-cyan-300 transition-colors">
+              <Link to="/forgot-password" className="text-xs text-blue-400 hover:text-blue-300 transition-colors">
                 Forgot password?
               </Link>
             </div>
@@ -78,7 +78,7 @@ export default function Login() {
               <button
                 type="button"
                 onClick={() => setShow(!show)}
-                className="absolute right-3 top-1/2 -translate-y-1/2 text-white/25 hover:text-cyan-400 transition-colors"
+                className="absolute right-3 top-1/2 -translate-y-1/2 text-white/25 hover:text-blue-400 transition-colors"
               >
                 {show ? <EyeOff className="w-4 h-4" /> : <Eye className="w-4 h-4" />}
               </button>
@@ -89,7 +89,7 @@ export default function Login() {
 
           <p className="text-center text-white/25 text-sm">
             Don't have an account?{' '}
-            <Link to="/signup" className="text-cyan-400 hover:text-cyan-300 font-medium transition-colors">
+            <Link to="/signup" className="text-blue-400 hover:text-blue-300 font-medium transition-colors">
               Sign up free
             </Link>
           </p>

@@ -12,10 +12,10 @@ export default function ForgotPassword() {
       <div className="min-h-screen flex items-center justify-center px-4 animate-fade-in" style={{ background: '#080f1e' }}>
         <div className="text-center max-w-md">
           <div
-            className="w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6 border border-cyan-500/20"
-            style={{ background: 'rgba(6,182,212,0.08)' }}
+            className="w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6 border border-blue-500/20"
+            style={{ background: 'rgba(37,99,235,0.1)' }}
           >
-            <Mail className="w-8 h-8 text-cyan-400" />
+            <Mail className="w-8 h-8 text-blue-400" />
           </div>
           <h2 className="text-2xl font-bold text-white mb-2">Check your inbox</h2>
           <p className="text-white/35 text-sm mb-8">
@@ -31,7 +31,7 @@ export default function ForgotPassword() {
     <div className="min-h-screen flex items-center justify-center px-4 py-20 animate-fade-in" style={{ background: '#080f1e' }}>
 
       <div className="glow-blob w-96 h-96 top-0 left-1/2 -translate-x-1/2 -translate-y-1/2"
-        style={{ background: 'radial-gradient(ellipse, rgba(6,182,212,0.07) 0%, transparent 70%)' }} />
+        style={{ background: 'radial-gradient(ellipse, rgba(37,99,235,0.08) 0%, transparent 70%)' }} />
 
       <div className="relative w-full max-w-md">
         <div className="text-center mb-8">
@@ -41,7 +41,7 @@ export default function ForgotPassword() {
               <span className="font-bold text-lg">
                 <span className="gradient-text">Cabrera</span><span className="text-white"> AI</span>
               </span>
-              <span className="text-[10px] text-cyan-500/60 font-medium tracking-widest uppercase">AI Tool Library</span>
+              <span className="text-[10px] text-blue-500/60 font-medium tracking-widest uppercase">AI Tool Library</span>
             </div>
           </Link>
           <h1 className="text-3xl font-black text-white mb-1.5">Reset your password</h1>
@@ -49,8 +49,8 @@ export default function ForgotPassword() {
         </div>
 
         <div
-          className="rounded-2xl p-8 space-y-5 border border-cyan-500/10"
-          style={{ background: 'rgba(12,21,38,0.95)' }}
+          className="rounded-2xl p-8 space-y-5 border border-blue-500/10"
+          style={{ background: 'rgba(6,12,26,0.95)' }}
         >
           <div>
             <label className="block text-xs font-medium text-white/40 mb-2 uppercase tracking-wide">Email Address</label>

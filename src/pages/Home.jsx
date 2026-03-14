@@ -16,9 +16,9 @@ const categories = [
 ];
 
 const whatItIs = [
-  { icon: <Layers    className="w-5 h-5 text-cyan-400" />,  title: 'Use ready-made tools',    desc: 'Access useful apps instantly.' },
+  { icon: <Layers    className="w-5 h-5 text-blue-400" />,  title: 'Use ready-made tools',    desc: 'Access useful apps instantly.' },
   { icon: <ShoppingBag className="w-5 h-5 text-blue-400" />, title: 'Buy premium tools',      desc: 'Unlock advanced features and templates.' },
-  { icon: <Wrench    className="w-5 h-5 text-cyan-400" />,  title: 'Request custom builds',   desc: 'Send your idea and get your own app built.' },
+  { icon: <Wrench    className="w-5 h-5 text-blue-400" />,  title: 'Request custom builds',   desc: 'Send your idea and get your own app built.' },
   { icon: <BookMarked className="w-5 h-5 text-blue-400" />, title: 'Build your own library',  desc: 'Save and manage your favourite tools.' },
 ];
 
@@ -52,7 +52,7 @@ export default function Home() {
         <div className="relative max-w-4xl mx-auto text-center">
           {/* Pill */}
           <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-semibold mb-8 border"
-            style={{ background: 'rgba(6,182,212,0.07)', borderColor: 'rgba(6,182,212,0.2)', color: '#22d3ee' }}>
+            style={{ background: 'rgba(37,99,235,0.08)', borderColor: 'rgba(6,182,212,0.2)', color: '#60a5fa' }}>
             <span className="w-1.5 h-1.5 rounded-full bg-cyan-400 animate-pulse shrink-0"></span>
             AI Tool Library — Now Live
           </div>
@@ -87,7 +87,7 @@ export default function Home() {
 
           {/* Stats */}
           <div className="flex flex-wrap justify-center gap-x-8 gap-y-5 pt-8"
-            style={{ borderTop: '1px solid rgba(6,182,212,0.07)' }}>
+            style={{ borderTop: '1px solid rgba(37,99,235,0.08)' }}>
             {[['50+','AI Tools'],['1,200+','Active Users'],['8','Categories'],['Weekly','New Tools']].map(([n,l]) => (
               <div key={l} className="text-center">
                 <div className="text-2xl font-bold gradient-text">{n}</div>
@@ -115,7 +115,7 @@ export default function Home() {
               <div key={item.title} className="card p-5">
                 <div className="flex items-center gap-2.5 mb-4">
                   <div className="w-10 h-10 rounded-xl flex items-center justify-center shrink-0 border"
-                    style={{ background: 'rgba(6,182,212,0.07)', borderColor: 'rgba(6,182,212,0.14)' }}>
+                    style={{ background: 'rgba(37,99,235,0.08)', borderColor: 'rgba(37,99,235,0.14)' }}>
                     {item.icon}
                   </div>
                   <span className="text-white/15 font-bold text-xs">0{i+1}</span>
@@ -144,7 +144,7 @@ export default function Home() {
                 className="card p-5 text-center group"
               >
                 <div className="text-2xl mb-2.5">{cat.icon}</div>
-                <div className="font-semibold text-white text-[13.5px] mb-1 group-hover:text-cyan-400 transition-colors">{cat.name}</div>
+                <div className="font-semibold text-white text-[13.5px] mb-1 group-hover:text-blue-400 transition-colors">{cat.name}</div>
                 <div className="text-white/25 text-xs">{cat.count} tools</div>
               </Link>
             ))}
@@ -160,7 +160,7 @@ export default function Home() {
               <p className="label-tag mb-2.5">Trending</p>
               <h2 className="text-[1.875rem] font-bold text-white tracking-tight">Popular tools</h2>
             </div>
-            <Link to="/tools" className="hidden sm:flex items-center gap-1 text-[13px] font-medium text-cyan-400/80 hover:text-cyan-400 transition-colors">
+            <Link to="/tools" className="hidden sm:flex items-center gap-1 text-[13px] font-medium text-blue-400/80 hover:text-blue-400 transition-colors">
               View all <ChevronRight className="w-4 h-4" />
             </Link>
           </div>
@@ -168,7 +168,7 @@ export default function Home() {
             {featuredTools.map(tool => <ToolCard key={tool.id} tool={tool} />)}
           </div>
           <div className="sm:hidden mt-6 text-center">
-            <Link to="/tools" className="text-sm text-cyan-400 font-medium">View all tools →</Link>
+            <Link to="/tools" className="text-sm text-blue-400 font-medium">View all tools →</Link>
           </div>
         </div>
       </section>
@@ -188,7 +188,7 @@ export default function Home() {
             {steps.map(s => (
               <div key={s.num} className="card p-6 text-center relative">
                 <div className="inline-flex items-center justify-center w-11 h-11 rounded-full mx-auto mb-4 font-bold text-[13px] border"
-                  style={{ background: 'rgba(6,182,212,0.09)', borderColor: 'rgba(6,182,212,0.22)', color: '#22d3ee' }}>
+                  style={{ background: 'rgba(6,182,212,0.09)', borderColor: 'rgba(6,182,212,0.22)', color: '#60a5fa' }}>
                   {s.num}
                 </div>
                 <h3 className="font-semibold text-white text-[14.5px] mb-2">{s.title}</h3>
@@ -204,14 +204,14 @@ export default function Home() {
         <div className="max-w-2xl mx-auto text-center">
           <div className="relative rounded-2xl p-10 sm:p-14 overflow-hidden border"
             style={{
-              background: 'linear-gradient(145deg, rgba(6,182,212,0.06) 0%, rgba(37,99,235,0.05) 100%)',
-              borderColor: 'rgba(6,182,212,0.14)',
+              background: 'linear-gradient(145deg, rgba(37,99,235,0.07) 0%, rgba(37,99,235,0.05) 100%)',
+              borderColor: 'rgba(37,99,235,0.14)',
             }}>
             <div className="glow-blob w-80 h-64 -top-10 left-1/2 -translate-x-1/2"
-              style={{ background: 'radial-gradient(ellipse, rgba(6,182,212,0.1) 0%, transparent 70%)' }} />
+              style={{ background: 'radial-gradient(ellipse, rgba(37,99,235,0.12) 0%, transparent 70%)' }} />
             <div className="relative">
               <div className="w-14 h-14 rounded-2xl flex items-center justify-center mx-auto mb-6 border"
-                style={{ background: 'rgba(6,182,212,0.08)', borderColor: 'rgba(6,182,212,0.18)' }}>
+                style={{ background: 'rgba(37,99,235,0.1)', borderColor: 'rgba(6,182,212,0.18)' }}>
                 <Logo size={32} />
               </div>
               <h2 className="text-2xl sm:text-3xl font-bold text-white mb-3 tracking-tight">Need a custom AI tool?</h2>
@@ -240,8 +240,8 @@ export default function Home() {
                 {whyPoints.map(p => (
                   <li key={p} className="flex items-center gap-3">
                     <div className="w-6 h-6 rounded-full flex items-center justify-center shrink-0 border"
-                      style={{ background: 'rgba(6,182,212,0.08)', borderColor: 'rgba(6,182,212,0.22)' }}>
-                      <CheckCircle className="w-3.5 h-3.5 text-cyan-400" />
+                      style={{ background: 'rgba(37,99,235,0.1)', borderColor: 'rgba(6,182,212,0.22)' }}>
+                      <CheckCircle className="w-3.5 h-3.5 text-blue-400" />
                     </div>
                     <span className="text-white/65 text-[14.5px]">{p}</span>
                   </li>
@@ -249,12 +249,12 @@ export default function Home() {
               </ul>
             </div>
             <div className="rounded-2xl p-7 border"
-              style={{ background: 'rgba(10,18,36,0.9)', borderColor: 'rgba(6,182,212,0.1)' }}>
+              style={{ background: 'rgba(6,12,26,0.92)', borderColor: 'rgba(37,99,235,0.12)' }}>
               <div className="flex items-center gap-3 mb-5">
                 <Logo size={30} />
                 <div>
                   <div className="font-bold text-white text-[14px]">Cabrera AI</div>
-                  <div style={{ fontSize: '11px', color: 'rgba(34,211,238,0.55)' }}>AI Tool Library</div>
+                  <div style={{ fontSize: '11px', color: 'rgba(96,165,250,0.6)' }}>AI Tool Library</div>
                 </div>
               </div>
               <p className="text-white/35 text-[13.5px] leading-relaxed mb-6">

@@ -188,6 +188,27 @@ export const tools = [
     externalLink: 'https://asistentemed.cabreraai.com/',
     comingSoonMessage: null,
   },
+  {
+    id: 10,
+    slug: 'study-buddy',
+    name: 'StudyBuddy',
+    category: 'Education',
+    status: 'Live',
+    badge: 'New',
+    featured: true,
+    icon: '🎓',
+    description: 'Your AI study companion for learning, revision, and exam prep.',
+    longDescription: 'StudyBuddy is an AI-powered learning assistant designed to help you study smarter. Whether you\'re revising for exams, learning something new, or working through tough concepts, StudyBuddy explains, quizzes, and guides you every step of the way.',
+    features: [
+      'AI-powered explanations for any subject or topic',
+      'Revision quizzes and practice questions',
+      'Breaks down complex concepts into simple steps',
+      'Works for school, college, and self-study',
+    ],
+    tags: ['study', 'revision', 'education', 'exams'],
+    externalLink: 'https://studybuddy.cabreraai.com',
+    comingSoonMessage: null,
+  },
 ];
 
 export const categories = [
